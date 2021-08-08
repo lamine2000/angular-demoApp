@@ -1,0 +1,19 @@
+<div class="col-xs-12">
+  <ul class="list-group">
+    <h2>Mes appareils</h2>
+    <app-appareil *ngFor="let appareil of appareils; let i = index"
+                  [appareilIndex]="i"
+                  [appareilName]="appareil.name"
+                  [appareilStatus]="appareil.status"
+                  [id]="appareil.id"></app-appareil>
+  </ul>
+  <button
+    [ngClass]="{
+          'btn':true,
+          'btn-success':this.buttonText === 'Tout Allumer',
+          'btn-danger':this.buttonText === 'Tout Éteindre'
+         }"
+    [disabled]="!isAtuth"
+    (click)="switchAll()"
+  >{{ buttonText }}</button>
+</div>
