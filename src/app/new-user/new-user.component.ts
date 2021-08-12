@@ -25,8 +25,8 @@ export class NewUserComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      drinkPreference: ["Jus d'orange", Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      drinkPreference: "Jus d'orange"
     });
   }
   onSubmitForm(){
