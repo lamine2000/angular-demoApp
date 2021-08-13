@@ -22,6 +22,7 @@ export class AppareilViewComponent implements OnInit {
       }
     );
     this.appareilService.emitAppareilSubject();
+    this.onFetch();
   }
 
   switchAll (){
@@ -35,6 +36,14 @@ export class AppareilViewComponent implements OnInit {
     }
     else
       this.buttonText = 'Tout Allumer';
+  }
+
+  onSave(){
+    this.appareilService.saveAppareilsToServer();
+  }
+
+  onFetch(){
+    this.appareilService.getAppareilsFromServer();
   }
 
 }
